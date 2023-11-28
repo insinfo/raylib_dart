@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'dart:ffi';
 
-import 'package:raylib/src/generated_bindings.dart' as raylib;
-import 'package:raylib/src/utils/native_array.dart';
-import 'package:raylib/src/utils/native_type.dart';
-import 'package:raylib/src/utils/pointer_list.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/utils/native_array.dart';
+import 'package:raylib_dart/src/utils/native_type.dart';
+import 'package:raylib_dart/src/utils/pointer_list.dart';
 
 /// Bone, skeletal animation bone.
 class BoneInfo extends NativeClass<raylib.BoneInfo> {
   /// Bone, skeletal animation bone.
   BoneInfo.fromRef(raylib.BoneInfo ref) : super.fromRef(ref);
 
-  Int8Array get _name => Int8Array(ref.name, 32);
+  CharArray get _name => CharArray(ref.name, 32);
 
   /// Bone name.
   String get name => utf8.decode(_name);

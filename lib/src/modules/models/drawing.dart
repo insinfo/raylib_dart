@@ -1,6 +1,6 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/matrix.dart' as matrix;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/matrix.dart' as matrix;
 
 /// Draw a model (with texture if set).
 void drawModel(Model model, Vector3 position, double scale, Color tint) {

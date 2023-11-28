@@ -12,3 +12,13 @@ Pointer<Int32> toPointer(List<int> points) {
   }
   return pointer;
 }
+
+Pointer<Int> toIntPointer(List<int> points) {
+  final pointer = malloc<Int>(
+    sizeOf<Int>() * points.length,
+  );
+  for (var i = 0; i < points.length; i++) {
+    pointer.elementAt(i).value = points[i];
+  }
+  return pointer;
+}

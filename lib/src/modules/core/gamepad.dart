@@ -1,9 +1,9 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/gamepad_axis.dart';
-import 'package:raylib/src/enums/gamepad_button.dart';
-import 'package:raylib/src/generated_bindings.dart' as raylib;
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/gamepad_axis.dart';
+import 'package:raylib_dart/src/enums/gamepad_button.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Check if a gamepad is available.
 bool isGamepadAvailable(int gamepad) {
@@ -12,7 +12,7 @@ bool isGamepadAvailable(int gamepad) {
 
 /// Get gamepad internal name id.
 String getGamepadName(int gamepad) {
-  return string.toDart(library.GetGamepadName(gamepad));
+  return string.fromNative(library.GetGamepadName(gamepad));
 }
 
 /// Check if a gamepad button has been pressed once.
@@ -96,5 +96,5 @@ double getGamepadAxisMovement(int gamepad, GamepadAxis axis) {
 
 /// Set internal gamepad mappings (SDL_GameControllerDB).
 int setGamepadMappings(String mappings) {
-  return library.SetGamepadMappings(string.toNative(mappings));
+  return library.SetGamepadMappings(string.toNativeString(mappings));
 }

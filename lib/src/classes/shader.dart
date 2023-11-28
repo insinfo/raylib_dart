@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
-import 'package:raylib/src/generated_bindings.dart' as raylib;
-import 'package:raylib/src/utils/native_type.dart';
-import 'package:raylib/src/utils/pointer_list.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/utils/native_type.dart';
+import 'package:raylib_dart/src/utils/pointer_list.dart';
 
 /// Material, includes shader and maps.
 class Shader extends NativeClass<raylib.Shader> {
@@ -13,5 +13,5 @@ class Shader extends NativeClass<raylib.Shader> {
   int get id => ref.id;
 
   /// Shader locations array (RL_MAX_SHADER_LOCATIONS).
-  PointerList<Int32> get locs => PointerList(ref.locs);
+  PointerList<Int> get locs => PointerList(ref.locs);
 }

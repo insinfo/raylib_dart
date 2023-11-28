@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
 
 /// Turn a list of [Matrix] into a pointer.
 Pointer<raylib.Matrix> toPointer(List<Matrix> transforms) {

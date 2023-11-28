@@ -1,9 +1,9 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/font_type.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/glyph_info.dart' as glyph_info;
-import 'package:raylib/src/utils/integer.dart' as integer;
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/font_type.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/glyph_info.dart' as glyph_info;
+import 'package:raylib_dart/src/utils/integer.dart' as integer;
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Get the default Font.
 Font getFontDefault() {
@@ -12,7 +12,7 @@ Font getFontDefault() {
 
 /// Load font from file into GPU memory (VRAM).
 Font loadFont(String fileName) {
-  return Font.fromRef(library.LoadFont(string.toNative(fileName)));
+  return Font.fromRef(library.LoadFont(string.toNativeString(fileName)));
 }
 
 /// Load font from file with extended parameters.
@@ -24,9 +24,9 @@ Font loadFontEx(
 ) {
   return Font.fromRef(
     library.LoadFontEx(
-      string.toNative(fileName),
+      string.toNativeString(fileName),
       fontSize,
-      integer.toPointer(fontChars),
+      integer.toIntPointer(fontChars),
       glyphCount,
     ),
   );
@@ -54,11 +54,11 @@ Font loadFontFromMemory(
 ) {
   return Font.fromRef(
     library.LoadFontFromMemory(
-      string.toNative(fileType),
-      string.toNativeUnsigned(fileData),
+      string.toNativeString(fileType),
+      string.toNativeUnsignedChar(fileData),
       dataSize,
       fontSize,
-      integer.toPointer(fontChars),
+      integer.toIntPointer(fontChars),
       glyphCount,
     ),
   );
@@ -75,10 +75,10 @@ GlyphInfo loadFontData(
 ) {
   return GlyphInfo.fromPointer(
     library.LoadFontData(
-      string.toNativeUnsigned(fileData),
+      string.toNativeUnsignedChar(fileData),
       dataSize,
       fontSize,
-      integer.toPointer(fontChars),
+      integer.toIntPointer(fontChars),
       glyphCount,
       fontTypeToNative(type),
     ),

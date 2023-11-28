@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:raylib/raylib.dart';
+import 'package:raylib_dart/raylib_dart.dart';
 
 final _random = Random();
 double _getRandomValue(double min, double max) {

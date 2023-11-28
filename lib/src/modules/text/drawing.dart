@@ -1,6 +1,6 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Draw current FPS
 void drawFPS(int posX, int posY) {
@@ -10,7 +10,7 @@ void drawFPS(int posX, int posY) {
 /// Draw text (using default font)
 void drawText(String text, int posX, int posY, int fontSize, Color color) {
   return library.DrawText(
-    string.toNative(text),
+    string.toNativeString(text),
     posX,
     posY,
     fontSize,
@@ -29,7 +29,7 @@ void drawTextEx(
 ) {
   return library.DrawTextEx(
     font.ref,
-    string.toNative(text),
+    string.toNativeString(text),
     position.ref,
     fontSize,
     spacing,
@@ -50,7 +50,7 @@ void drawTextPro(
 ) {
   return library.DrawTextPro(
     font.ref,
-    string.toNative(text),
+    string.toNativeString(text),
     position.ref,
     origin.ref,
     rotation,

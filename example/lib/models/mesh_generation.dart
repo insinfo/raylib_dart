@@ -1,4 +1,5 @@
-import 'package:raylib/raylib.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// generate a simple triangle mesh from code
 Mesh makeMesh() {
@@ -55,10 +56,14 @@ void main() {
   );
 
   // We generate a checked image for texturing
-  final checked = genImageChecked(2, 2, 1, 1, Color.red, Color.green);
-  print(' main ${checked.ref}');
-  final texture = loadTextureFromImage(checked);
-  // unloadImage(checked);
+  final checked =
+      library.GenImageChecked(2, 2, 1, 1, Color.red.ref, Color.green.ref);
+  //final checked = genImageChecked(2, 2, 1, 1, Color.red, Color.green);
+  
+  final texture = Texture2D.fromRef(
+      library.LoadTextureFromImage(checked)); //loadTextureFromImage(checked);
+   //unloadImage(checked);
+   library.UnloadImage(checked);
 
   final models = <Model>[
     loadModelFromMesh(genMeshPlane(2, 2, 5, 5)),
@@ -73,9 +78,9 @@ void main() {
   ];
 
   // Set checked texture as default diffuse component for all models material
-  // for (final model in models) {
-  //   model.materials[0].maps[materialMapDiffuse].texture = texture;
-  // }
+  for (final model in models) {
+    model.materials[0].maps[materialMapDiffuse].texture = texture;
+  }
 
   // Define the camera to look into our 3d world
   final camera = Camera3D(

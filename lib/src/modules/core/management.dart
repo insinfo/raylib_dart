@@ -1,13 +1,13 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Load shader from files and bind default locations.
 Shader loadShader(String vsFileName, String fsFileName) {
   return Shader.fromRef(
     library.LoadShader(
-      string.toNative(vsFileName),
-      string.toNative(fsFileName),
+      string.toNativeString(vsFileName),
+      string.toNativeString(fsFileName),
     ),
   );
 }
@@ -16,22 +16,22 @@ Shader loadShader(String vsFileName, String fsFileName) {
 Shader loadShaderFromMemory(String vsCode, String fsCode) {
   return Shader.fromRef(
     library.LoadShaderFromMemory(
-      string.toNative(vsCode),
-      string.toNative(fsCode),
+      string.toNativeString(vsCode),
+      string.toNativeString(fsCode),
     ),
   );
 }
 
 /// Get shader uniform location.
 int getShaderLocation(Shader shader, String uniformName) {
-  return library.GetShaderLocation(shader.ref, string.toNative(uniformName));
+  return library.GetShaderLocation(shader.ref, string.toNativeString(uniformName));
 }
 
 /// Get shader attribute location.
 int getShaderLocationAttrib(Shader shader, String attribName) {
   return library.GetShaderLocationAttrib(
     shader.ref,
-    string.toNative(attribName),
+    string.toNativeString(attribName),
   );
 }
 

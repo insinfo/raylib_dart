@@ -1,4 +1,4 @@
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// Set target FPS (maximum).
 void setTargetFPS(int fps) {

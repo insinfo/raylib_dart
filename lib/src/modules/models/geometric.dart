@@ -1,6 +1,6 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/vector3.dart' as vector3;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/vector3.dart' as vector3;
 
 /// Draw a line in 3D world space.
 void drawLine3D(Vector3 startPos, Vector3 endPos, Color color) {

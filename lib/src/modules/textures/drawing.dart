@@ -1,7 +1,7 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
-import 'package:raylib/src/utils/vector2.dart' as vector2;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
+import 'package:raylib_dart/src/utils/vector2.dart' as vector2;
 
 /// Clear image background with given color.
 void imageClearBackground(Image dst, Color color) {
@@ -141,7 +141,7 @@ void imageDrawText(
 ) {
   return library.ImageDrawText(
     dst.pointer,
-    string.toNative(text),
+    string.toNativeString(text),
     posX,
     posY,
     fontSize,
@@ -162,7 +162,7 @@ void imageDrawTextEx(
   return library.ImageDrawTextEx(
     dst.pointer,
     font.ref,
-    string.toNative(text),
+    string.toNativeString(text),
     position.ref,
     fontSize,
     spacing,

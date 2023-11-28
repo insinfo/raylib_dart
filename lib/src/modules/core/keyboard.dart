@@ -1,7 +1,7 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/keyboard_key.dart';
-import 'package:raylib/src/generated_bindings.dart' as raylib;
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/keyboard_key.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/library.dart';
 
 /// Check if a key has been pressed once.
 bool isKeyPressed(KeyboardKey key) {

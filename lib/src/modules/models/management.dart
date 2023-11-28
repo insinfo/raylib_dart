@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Upload mesh vertex data in GPU and provide VAO/VBO ids
 void uploadMesh(
@@ -30,7 +30,7 @@ void unloadMesh(Mesh mesh) {
 
 /// Export mesh data to file, returns true on success.
 bool exportMesh(Mesh mesh, String fileName) {
-  return library.ExportMesh(mesh.ref, string.toNative(fileName));
+  return library.ExportMesh(mesh.ref, string.toNative(fileName).cast());
 }
 
 /// Compute mesh bounding box limits.

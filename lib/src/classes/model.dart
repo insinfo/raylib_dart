@@ -1,9 +1,9 @@
 import 'dart:ffi';
 
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/generated_bindings.dart' as raylib;
-import 'package:raylib/src/utils/native_type.dart';
-import 'package:raylib/src/utils/pointer_list.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/utils/native_type.dart';
+import 'package:raylib_dart/src/utils/pointer_list.dart';
 
 /// Model, meshes, materials and animation data.
 class Model extends NativeClass<raylib.Model> {
@@ -26,7 +26,7 @@ class Model extends NativeClass<raylib.Model> {
   PointerList<raylib.Material> get materials => PointerList(ref.materials);
 
   /// Mesh material number.
-  PointerList<Int32> get meshMaterial => PointerList(ref.meshMaterial);
+  PointerList<Int> get meshMaterial => PointerList(ref.meshMaterial);
 
   /// Number of bones.
   int get boneCount => ref.boneCount;

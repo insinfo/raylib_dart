@@ -1,6 +1,6 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/camera_mode.dart';
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/camera_mode.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// Set camera mode (multiple camera modes available).
 ///

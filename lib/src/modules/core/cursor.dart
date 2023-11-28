@@ -1,4 +1,4 @@
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// Shows cursor.
 void showCursor() {

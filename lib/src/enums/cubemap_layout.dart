@@ -1,4 +1,4 @@
-import 'package:raylib/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
 
 /// Cubemap layouts.
 enum CubemapLayout {

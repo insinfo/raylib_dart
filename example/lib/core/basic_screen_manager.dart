@@ -1,4 +1,4 @@
-import 'package:raylib/raylib.dart';
+import 'package:raylib_dart/raylib_dart.dart';
 
 /// Enum that showcases a GameScreen state.
 enum GameScreen {

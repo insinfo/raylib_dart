@@ -1,5 +1,5 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// Check collision between two rectangles.
 bool checkCollisionRecs(Rectangle rec1, Rectangle rec2) {

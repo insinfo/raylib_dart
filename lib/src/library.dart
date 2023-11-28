@@ -1,7 +1,7 @@
 import 'dart:ffi';
 import 'dart:io';
 
-import 'package:raylib/src/generated_bindings.dart';
+import 'package:raylib_dart/src/generated_bindings.dart';
 
 late final Raylib? _library;
 

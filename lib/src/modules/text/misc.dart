@@ -1,10 +1,10 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Measure string width for default font.
 int measureText(String text, int fontSize) {
-  return library.MeasureText(string.toNative(text), fontSize);
+  return library.MeasureText(string.toNativeString(text), fontSize);
 }
 
 /// Measure string size for Font.
@@ -17,7 +17,7 @@ Vector2 measureTextEx(
   return Vector2.fromRef(
     library.MeasureTextEx(
       font.ref,
-      string.toNative(text),
+      string.toNativeString(text),
       fontSize,
       spacing,
     ),

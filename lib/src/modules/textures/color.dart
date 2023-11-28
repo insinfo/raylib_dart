@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/pixel_format.dart';
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/pixel_format.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// Returns color with alpha applied, alpha goes from 0.0 to 1.0.
 Color fade(Color color, double alpha) {

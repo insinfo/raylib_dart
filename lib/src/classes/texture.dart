@@ -1,7 +1,7 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/pixel_format.dart';
-import 'package:raylib/src/generated_bindings.dart' as raylib;
-import 'package:raylib/src/utils/native_type.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/pixel_format.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/utils/native_type.dart';
 
 /// Texture, tex data stored in GPU memory (VRAM).
 class Texture extends NativeClass<raylib.Texture> {

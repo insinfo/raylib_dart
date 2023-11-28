@@ -1,4 +1,4 @@
-import 'package:raylib/src/generated_bindings.dart';
+import 'package:raylib_dart/src/generated_bindings.dart';
 
 export 'src/classes/bone_info.dart';
 

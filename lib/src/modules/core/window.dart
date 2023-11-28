@@ -1,14 +1,14 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/generated_bindings.dart' as raylib;
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Initialize window and OpenGL context.
 void initWindow(int screenWidth, int screenHeight, String title) {
   return library.InitWindow(
     screenWidth,
     screenHeight,
-    string.toNative(title),
+    string.toNative(title).cast(),
   );
 }
 
@@ -99,7 +99,7 @@ void setWindowIcon(raylib.Image image) {
 
 /// Set title for window (only PLATFORM_DESKTOP).
 void setWindowTitle(String title) {
-  return library.SetWindowTitle(string.toNative(title));
+  return library.SetWindowTitle(string.toNative(title).cast());
 }
 
 /// Set window position on screen (only PLATFORM_DESKTOP).
@@ -190,15 +190,15 @@ Vector2 getWindowScaleDPI() {
 
 /// Get the human-readable, UTF-8 encoded name of the primary monitor.
 String getMonitorName(int monitor) {
-  return string.toDart(library.GetMonitorName(monitor));
+  return string.toDart(library.GetMonitorName(monitor).cast());
 }
 
 /// Set clipboard text content.
 void setClipboardText(String text) {
-  return library.SetClipboardText(string.toNative(text));
+  return library.SetClipboardText(string.toNative(text).cast());
 }
 
 /// Get clipboard text content.
 String getClipboardText() {
-  return string.toDart(library.GetClipboardText());
+  return string.toDart(library.GetClipboardText().cast());
 }

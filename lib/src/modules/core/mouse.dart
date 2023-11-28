@@ -1,7 +1,7 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/mouse_button.dart';
-import 'package:raylib/src/enums/mouse_cursor.dart';
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/mouse_button.dart';
+import 'package:raylib_dart/src/enums/mouse_cursor.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// Check if a mouse button has been pressed once.
 bool isMouseButtonPressed(MouseButton button) {

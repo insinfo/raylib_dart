@@ -1,5 +1,5 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// Generate polygonal mesh.
 Mesh genMeshPoly(int sides, double radius) {

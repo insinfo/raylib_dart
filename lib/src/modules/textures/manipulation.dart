@@ -1,10 +1,10 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/pixel_format.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/pixel_format.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Create an image duplicate (useful for transformations).
 Image imageCopy(Image image) {
@@ -20,7 +20,7 @@ Image imageFromImage(Image image, Rectangle rec) {
 Image imageText(String text, int fontSize, Color color) {
   return Image.fromRef(
     library.ImageText(
-      string.toNative(text),
+      string.toNativeString(text),
       fontSize,
       color.ref,
     ),
@@ -38,7 +38,7 @@ Image imageTextEx(
   return Image.fromRef(
     library.ImageTextEx(
       font.ref,
-      string.toNative(text),
+      string.toNativeString(text),
       fontSize,
       spacing,
       tint.ref,
@@ -181,7 +181,7 @@ List<Color> loadImageColors(Image image) {
 
 /// Load colors palette from image as a Color array (RGBA - 32bit).
 List<Color> loadImagePalette(Image image, int maxPaletteSize) {
-  final colorsCounter = malloc<Int32>(sizeOf<Int32>());
+  final colorsCounter = malloc<Int>(sizeOf<Int>());
 
   final result = library.LoadImagePalette(
     image.ref,

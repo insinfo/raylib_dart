@@ -1,14 +1,14 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/model_animation.dart' as model_animation;
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/model_animation.dart' as model_animation;
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Load model from files (meshes and materials).
 Model loadModel(String fileName) {
-  return Model.fromRef(library.LoadModel(string.toNative(fileName)));
+  return Model.fromRef(library.LoadModel(string.toNative(fileName).cast()));
 }
 
 /// Load model from generated mesh (default material).
@@ -38,9 +38,9 @@ Material loadMaterialDefault() {
 
 /// Load materials from model file.
 List<Material> loadMaterials(String fileName) {
-  final materialCount = malloc<Int32>(sizeOf<Int32>());
+  final materialCount = malloc<Int>(sizeOf<Int>());
   final result = library.LoadMaterials(
-    string.toNative(fileName),
+    string.toNative(fileName).cast(),
     materialCount,
   );
 
@@ -57,9 +57,9 @@ void unloadMaterial(Material material) {
 
 /// Load materials from model file.
 List<ModelAnimation> loadModelAnimations(String fileName) {
-  final animCount = malloc<Uint32>(sizeOf<Uint32>());
+  final animCount = malloc<UnsignedInt>(sizeOf<UnsignedInt>());
   final result =
-      library.LoadModelAnimations(string.toNative(fileName), animCount);
+      library.LoadModelAnimations(string.toNative(fileName).cast(), animCount);
 
   return [
     for (var i = 0; i < animCount.value; i++)

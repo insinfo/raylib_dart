@@ -1,17 +1,17 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/enums/cubemap_layout.dart';
-import 'package:raylib/src/enums/pixel_format.dart';
-import 'package:raylib/src/enums/texture_filter.dart';
-import 'package:raylib/src/enums/texture_wrap.dart';
-import 'package:raylib/src/library.dart';
-import 'package:raylib/src/utils/string.dart' as string;
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/enums/cubemap_layout.dart';
+import 'package:raylib_dart/src/enums/pixel_format.dart';
+import 'package:raylib_dart/src/enums/texture_filter.dart';
+import 'package:raylib_dart/src/enums/texture_wrap.dart';
+import 'package:raylib_dart/src/library.dart';
+import 'package:raylib_dart/src/utils/string.dart' as string;
 
 /// Load image from file into CPU memory (RAM).
 Image loadImage(String fileName) {
-  return Image.fromRef(library.LoadImage(string.toNative(fileName)));
+  return Image.fromRef(library.LoadImage(string.toNativeString(fileName)));
 }
 
 /// Load image from RAW file data.
@@ -24,7 +24,7 @@ Image loadImageRaw(
 ) {
   return Image.fromRef(
     library.LoadImageRaw(
-      string.toNative(fileName),
+      string.toNativeString(fileName),
       width,
       headerSize,
       pixelFormatToNative(format),
@@ -35,12 +35,12 @@ Image loadImageRaw(
 
 /// Load image sequence from file (frames appended to image.data).
 Image loadImageAnim(String fileName) {
-  final frames = malloc<Int32>(sizeOf<Int32>());
+  final frames = malloc<Int>(sizeOf<Int>());
   // TODO(wolfen): how to handle out params?
 
   return Image.fromRef(
     library.LoadImageAnim(
-      string.toNative(fileName),
+      string.toNativeString(fileName),
       frames,
     ),
   );
@@ -50,8 +50,8 @@ Image loadImageAnim(String fileName) {
 Image loadImageFromMemory(String fileType, String fileData, int dataSize) {
   return Image.fromRef(
     library.LoadImageFromMemory(
-      string.toNative(fileType),
-      string.toNativeUnsigned(fileData),
+      string.toNativeString(fileType),
+      string.toNativeUnsignedChar(fileData),
       dataSize,
     ),
   );
@@ -74,29 +74,29 @@ void unloadImage(Image image) {
 
 /// Export image data to file, returns true on success.
 bool exportImage(Image image, String fileName) {
-  return library.ExportImage(image.ref, string.toNative(fileName));
+  return library.ExportImage(image.ref, string.toNativeString(fileName));
 }
 
 /// Export image as code file defining an array of bytes,
 /// returns true on success.
 bool exportImageAsCode(Image image, String fileName) {
-  return library.ExportImageAsCode(image.ref, string.toNative(fileName));
+  return library.ExportImageAsCode(image.ref, string.toNativeString(fileName));
 }
 
 /// Load texture from file into GPU memory (VRAM).
 Texture2D loadTexture(String fileName) {
   return Texture2D.fromRef(
     library.LoadTexture(
-      string.toNative(fileName),
+      string.toNativeString(fileName),
     ),
   );
 }
 
 /// Load texture from image data.
-Texture2D loadTextureFromImage(Image image) {
-  print('loadTextureFromImage ${image.ref}');
-  return Texture2D.fromRef(library.LoadTextureFromImage(image.ref));
-}
+// Texture2D loadTextureFromImage(Image image) {
+//   print('loadTextureFromImage ${image.ref}');
+//   return Texture2D.fromRef(library.LoadTextureFromImage(image.ref));
+// }
 
 /// Load cubemap from image, multiple image cubemap layouts supported.
 TextureCubemap loadTextureCubemap(Image image, CubemapLayout layout) {

@@ -1,9 +1,9 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:raylib/src/generated_bindings.dart' as raylib;
-import 'package:raylib/src/utils/native_type.dart';
-import 'package:raylib/src/utils/pointer_list.dart';
+import 'package:raylib_dart/src/generated_bindings.dart' as raylib;
+import 'package:raylib_dart/src/utils/native_type.dart';
+import 'package:raylib_dart/src/utils/pointer_list.dart';
 
 /// Rectangle, 4 components.
 class Rectangle extends NativeClass<raylib.Rectangle> {

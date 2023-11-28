@@ -1,5 +1,5 @@
-import 'package:raylib/raylib.dart';
-import 'package:raylib/src/library.dart';
+import 'package:raylib_dart/raylib_dart.dart';
+import 'package:raylib_dart/src/library.dart';
 
 /// Generate image: plain color.
 Image genImageColor(
@@ -64,25 +64,25 @@ Image genImageGradientRadial(
 }
 
 /// Generate image: checked.
-Image genImageChecked(
-  int width,
-  int height,
-  int checksX,
-  int checksY,
-  Color col1,
-  Color col2,
-) {
-  return Image.fromRef(
-    library.GenImageChecked(
-      width,
-      height,
-      checksX,
-      checksY,
-      col1.ref,
-      col2.ref,
-    ),
-  );
-}
+// Image genImageChecked(
+//   int width,
+//   int height,
+//   int checksX,
+//   int checksY,
+//   Color col1,
+//   Color col2,
+// ) {
+//   return Image.fromRef(
+//     library.GenImageChecked(
+//       width,
+//       height,
+//       checksX,
+//       checksY,
+//       col1.ref,
+//       col2.ref,
+//     ),
+//   );
+// }
 
 /// Generate image: white noise.
 Image genImageWhiteNoise(
