@@ -42,7 +42,7 @@ Mesh makeMesh() {
 void main() {
   initLibrary(
     linux: './include/libraylib.so',
-    windows: 'C:/MyProjectsDart/dart-raylib/example/raylib_4.2.0_msvc16.dll',
+    windows: 'C:/MyProjectsDart/dart-raylib/example/raylib_4.0.0_msvc16.dll',
   );
 
   const screenWidth = 800;
